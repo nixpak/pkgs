@@ -6,7 +6,7 @@
       url = "github:hercules-ci/flake-parts";
     };
   };
-  outputs = { self, nixpak, flake-parts }: flake-parts.lib.mkFlake { inherit self; } {
+  outputs = { flake-parts, ... }@inputs: flake-parts.lib.mkFlake { inherit inputs; } {
     imports = [
       ./part.nix
       ./modules/builders.nix
