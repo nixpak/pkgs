@@ -44,6 +44,7 @@ in
         (sloth.concat' sloth.xdgConfigHome "/gtk-2.0")
         (sloth.concat' sloth.xdgConfigHome "/gtk-3.0")
         (sloth.concat' sloth.xdgConfigHome "/gtk-4.0")
+        (sloth.concat' sloth.xdgConfigHome "/fontconfig")
       ];
       env = {
         XDG_DATA_DIRS = lib.makeSearchPath "share" [
