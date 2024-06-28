@@ -5,6 +5,7 @@
   };
   imports = [
     ./browsers/chromium
+    ./browsers/firefox
     ./gnome/calculator
     ./gnome/maps
   ];
