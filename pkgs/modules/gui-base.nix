@@ -40,12 +40,12 @@
       ];
       env = {
         XDG_DATA_DIRS = lib.makeSearchPath "share" [
-          pkgs.gnome.adwaita-icon-theme
+          pkgs.adwaita-icon-theme
           pkgs.shared-mime-info
         ];
         XCURSOR_PATH = lib.concatStringsSep ":" [
-          "${pkgs.gnome.adwaita-icon-theme}/share/icons"
-          "${pkgs.gnome.adwaita-icon-theme}/share/pixmaps"
+          "${pkgs.adwaita-icon-theme}/share/icons"
+          "${pkgs.adwaita-icon-theme}/share/pixmaps"
         ];
       };
     };

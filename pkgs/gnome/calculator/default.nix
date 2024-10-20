@@ -4,7 +4,7 @@
 {
   packages.gnome-calculator = builders.mkNixPakPackage {
     config = {
-      app.package = pkgs.gnome.gnome-calculator;
+      app.package = pkgs.gnome-calculator;
       flatpak.appId = "org.gnome.Calculator";
       imports = [
         nixpakModules.gui-base
