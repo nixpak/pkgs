@@ -32,7 +32,7 @@ in
         (sloth.concat [
           (sloth.env "XDG_RUNTIME_DIR")
           "/"
-          (sloth.env "WAYLAND_DISPLAY")
+          (sloth.envOr "WAYLAND_DISPLAY" "no")
         ])
 
         (envSuffix "XDG_RUNTIME_DIR" "/at-spi/bus")
