@@ -16,6 +16,10 @@
     locale.enable = true;
     bubblewrap = {
       network = lib.mkDefault false;
+      sockets = {
+        wayland = true;
+        pulse = true;
+      };
       bind.rw = [
         [
           sloth.appCacheDir
@@ -24,15 +28,8 @@
         (sloth.concat' sloth.xdgCacheHome "/fontconfig")
         (sloth.concat' sloth.xdgCacheHome "/mesa_shader_cache")
 
-        (sloth.concat [
-          (sloth.env "XDG_RUNTIME_DIR")
-          "/"
-          (sloth.env "WAYLAND_DISPLAY")
-        ])
-
         (sloth.concat' sloth.runtimeDir "/at-spi/bus")
         (sloth.concat' sloth.runtimeDir "/gvfsd")
-        (sloth.concat' sloth.runtimeDir "/pulse")
       ];
       bind.ro = [
         (sloth.concat' sloth.runtimeDir "/doc")
