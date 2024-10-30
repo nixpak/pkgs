@@ -1,5 +1,10 @@
-{ config, lib, pkgs, sloth, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  sloth,
+  ...
+}: {
   config = {
     dbus.policies = {
       "${config.flatpak.appId}" = "own";
@@ -40,12 +45,12 @@
       ];
       env = {
         XDG_DATA_DIRS = lib.makeSearchPath "share" [
-          pkgs.adwaita-icon-theme
+          pkgs.gnome.adwaita-icon-theme
           pkgs.shared-mime-info
         ];
         XCURSOR_PATH = lib.concatStringsSep ":" [
-          "${pkgs.adwaita-icon-theme}/share/icons"
-          "${pkgs.adwaita-icon-theme}/share/pixmaps"
+          "${pkgs.gnome.adwaita-icon-theme}/share/icons"
+          "${pkgs.gnome.adwaita-icon-theme}/share/pixmaps"
         ];
       };
     };
