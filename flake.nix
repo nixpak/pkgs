@@ -16,8 +16,6 @@
   };
   outputs = { flake-parts, ... }@inputs: flake-parts.lib.mkFlake { inherit inputs; } {
     imports = [
-      inputs.hercules-ci-effects.flakeModule
-      ./jobs/update-flake-lock
       ./part.nix
       ./modules/builders.nix
     ];
